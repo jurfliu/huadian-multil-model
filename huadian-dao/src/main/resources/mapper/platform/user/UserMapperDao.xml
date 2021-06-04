@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huadian.dao.user.UserMapper" >
+
+    <select id="queryUserList" resultType="com.huadian.domain.user.bo.UserBo">
+       select userId,userName,pwd,tel from tb_user
+    </select>
+
+    <select id="getUserById" parameterType="string" resultType="com.huadian.domain.user.bo.UserBo">
+       select userId,userName,pwd,tel from tb_user where userId=#{userId}
+    </select>
+</mapper>
